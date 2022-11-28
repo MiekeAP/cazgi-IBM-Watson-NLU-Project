@@ -17,7 +17,6 @@ dotenv.config();
 
 const api_key = process.env.API_KEY;
 const api_url = process.env.API_URL;
-console.log(api_url);
 
 function getNLUInstance() {
     /*Type the code to create the NLU instance and return it.
@@ -26,12 +25,13 @@ function getNLUInstance() {
     const NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1');
     const { IamAuthenticator } = require('ibm-watson/auth');
 
+
     const naturalLanguageUnderstanding = new NaturalLanguageUnderstandingV1({
-        version: '2021-08-01',
-        authenticator: new IamAuthenticator ({
-            apikey: api_key
+        version: '2022-04-07',
+        authenticator: new IamAuthenticator({
+        apikey: api_key,
         }),
-        serviceUrl: api_url
+        serviceUrl: api_url,
     });
     return naturalLanguageUnderstanding;
 }
